@@ -1,0 +1,1 @@
+java -jar target/spring-example-3.5.0-fat.jar
