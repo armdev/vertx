@@ -37,7 +37,16 @@ public class ServerVerticle extends AbstractVerticle {
 							req.response().setStatusCode(500).write(result.cause().toString()).end();
 						}
 					});
-				} else if (req.path().equals("/addProduct")) {
+				} else if (req.path().equals("/cardDevice/getSchoolKey")) {
+					String deviceNo = req.getHeader("device_no");
+					vertx.eventBus().<String>send(SpringDemoVerticle.GetSchoolKey, deviceNo, result -> {
+						if (result.succeeded()) {
+							req.response().setStatusCode(200).write(result.result().body()).end();
+						} else {
+							req.response().setStatusCode(500).write(result.cause().toString()).end();
+						}
+					});
+				}  else if (req.path().equals("/addProduct")) {
 					String desc = req.getParam("desc");
 					Product p = new Product();
 					p.setDescription("serverGen");

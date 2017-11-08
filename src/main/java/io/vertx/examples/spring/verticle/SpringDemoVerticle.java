@@ -1,18 +1,18 @@
 package io.vertx.examples.spring.verticle;
 
+import org.springframework.context.ApplicationContext;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Handler;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.Json;
+import io.vertx.examples.spring.common.Result;
 import io.vertx.examples.spring.entity.Product;
+import io.vertx.examples.spring.service.DeviceService;
 import io.vertx.examples.spring.service.ProductService;
-
-import java.util.Random;
-
-import org.apache.shiro.session.mgt.eis.RandomSessionIdGenerator;
-import org.springframework.context.ApplicationContext;
 
 /**
  * Simple verticle to wrap a Spring service bean - note we wrap the service call
@@ -26,14 +26,17 @@ public class SpringDemoVerticle extends AbstractVerticle {
 
 	public static final String ALL_PRODUCTS_ADDRESS = "example.all.products";
 	public static final String ADD_PRODUCT = "add.product";
+	public static final String GetSchoolKey = "getSchoolKey";
 
 	// Reuse the Vert.x Mapper, alternatively you can use your own.
 	private final ObjectMapper mapper = Json.mapper;
 
 	private final ProductService service;
+	private final DeviceService deviceService;
 
 	public SpringDemoVerticle(final ApplicationContext context) {
 		service = (ProductService) context.getBean("productService");
+		deviceService = (DeviceService) context.getBean("deviceService");
 	}
 
 	private Handler<Message<String>> allProductsHandler(ProductService service) {
@@ -90,6 +93,21 @@ public class SpringDemoVerticle extends AbstractVerticle {
 			try {
 				service.saveProduct(message.body());
 				future.complete(mapper.writeValueAsString(""));
+			} catch (JsonProcessingException e) {
+				System.out.println("Failed to serialize result");
+				future.fail(e);
+			}
+		}, result -> {
+			if (result.succeeded()) {
+				message.reply(result.result());
+			} else {
+				message.reply(result.cause().toString());
+			}
+		}));
+		vertx.eventBus().<String>consumer(GetSchoolKey).handler(message -> vertx.<String>executeBlocking(future -> {
+			try {
+				Result result = deviceService.getSchoolKey(message.body());
+				future.complete(mapper.writeValueAsString(result));
 			} catch (JsonProcessingException e) {
 				System.out.println("Failed to serialize result");
 				future.fail(e);

@@ -1,7 +1,6 @@
 package io.vertx.examples.spring.service;
 
 import io.vertx.examples.spring.entity.Product;
-import io.vertx.examples.spring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +12,14 @@ import java.util.List;
 @Service
 public class ProductService {
 
-  @Autowired
-  private ProductRepository repo;
+//  @Autowired
+//  private ProductRepository repo;
+	@Autowired
+	
 
   public List<Product> getAllProducts() {
-    return repo.findAll();
+//    return repo.findAll();
+	  return null;
   }
 
 	public void saveProduct(Product p) {
@@ -27,7 +29,7 @@ public class ProductService {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}*/
-		repo.save(p);
+//		repo.save(p);
 //		return p.getProductId();
 	}
 
