@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 自定义sql 文件 -->
+<mapper namespace="io.vertx.examples.spring.repository.Tb_deviceMapperDefined">
+  <resultMap id="DeviceModelMap" type="io.vertx.examples.spring.vo.Tb_deviceDTO" extends="io.vertx.examples.spring.repository.Tb_deviceMapper.BaseResultMap">
+    <result column="school_id" jdbcType="INTEGER" property="schoolId" />
+    <result column="school_title" jdbcType="VARCHAR" property="schoolTitle" />
+    <result column="occasion" jdbcType="VARCHAR" property="occasion" />
+  </resultMap>
+  
+  	
+  <select id="getDevice" parameterType="java.lang.String" resultMap="DeviceModelMap">
+  	SELECT tb_device.*, tb_school.id AS school_id, tb_school.title AS school_title,tb_school.occasion 
+            FROM tb_device
+            LEFT JOIN tb_school ON tb_school.id = tb_device.school_id
+            WHERE tb_device.no = #{deviceNo} AND tb_device.deleted = 0 AND tb_device.status = 1 AND tb_school.deleted = 0 AND tb_school.status = 1
+  
+  </select>
+</mapper>

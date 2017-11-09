@@ -3,6 +3,9 @@ package io.vertx.examples.spring;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 
 /**
@@ -19,6 +22,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBoot {
     public static void main(String[] args) {
         SpringApplication.run(SpringBoot.class, args);
+    }
+    
+    
+    @Bean
+    public CharacterEncodingFilter initializeCharacterEncodingFilter() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        filter.setForceEncoding(true);
+        return filter;
     }
 }
 
