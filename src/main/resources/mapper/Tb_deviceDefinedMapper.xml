@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 自定义sql 文件 -->
-<mapper namespace="io.vertx.examples.spring.repository.Tb_deviceMapperDefined">
-  <resultMap id="DeviceModelMap" type="io.vertx.examples.spring.vo.Tb_deviceDTO" extends="io.vertx.examples.spring.repository.Tb_deviceMapper.BaseResultMap">
+<mapper namespace="cn.didano.robot.api.dao.Tb_deviceMapperDefined">
+  <resultMap id="DeviceModelMap" type="cn.didano.robot.api.vo.Tb_deviceDTO" extends="cn.didano.robot.api.dao.Tb_deviceMapper.BaseResultMap">
     <result column="school_id" jdbcType="INTEGER" property="schoolId" />
     <result column="school_title" jdbcType="VARCHAR" property="schoolTitle" />
     <result column="occasion" jdbcType="VARCHAR" property="occasion" />

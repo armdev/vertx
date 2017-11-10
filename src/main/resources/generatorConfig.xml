@@ -20,7 +20,7 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!--生成Model类存放位置 -->
-		<javaModelGenerator targetPackage="io.vertx.examples.spring.entity"
+		<javaModelGenerator targetPackage="cn.didano.robot.api.model"
 			targetProject="src/main/java/">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -32,7 +32,7 @@
 		</sqlMapGenerator>
 		<!--生成Dao类存放位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="io.vertx.examples.spring.repository" targetProject="src/main/java">
+							 targetPackage="cn.didano.robot.api.dao" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!--生成对应表及类名 -->
