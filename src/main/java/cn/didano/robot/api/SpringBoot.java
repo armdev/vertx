@@ -23,8 +23,8 @@ public class SpringBoot {
     public static void main(String[] args) {
         SpringApplication.run(SpringBoot.class, args);
     }
-    
-    
+
+
     @Bean
     public CharacterEncodingFilter initializeCharacterEncodingFilter() {
         CharacterEncodingFilter filter = new CharacterEncodingFilter();

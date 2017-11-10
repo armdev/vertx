@@ -56,7 +56,7 @@ public class CardDeviceVerticleConsumer extends AbstractVerticle {
 	
 	/**
 	 * 保存 产品信息
-	 * @param service2
+	 * @param service
 	 * @return
 	 */
 	private Handler<Message<String>> addProductsHandler(Message<Product> message,ProductService service) {

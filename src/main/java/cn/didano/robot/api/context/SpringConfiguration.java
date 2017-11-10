@@ -2,6 +2,7 @@ package cn.didano.robot.api.context;
 
 import javax.sql.DataSource;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -40,11 +41,22 @@ public class SpringConfiguration {
   @Bean
   @Autowired
   public DataSource dataSource(DatabasePopulator populator) {
-    final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+  /*  final DriverManagerDataSource dataSource = new DriverManagerDataSource();
     dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
     dataSource.setUrl(env.getProperty("jdbc.url"));
     dataSource.setUsername(env.getProperty("jdbc.username"));
+    dataSource.setPassword(env.getProperty("jdbc.password"));*/
+
+    DruidDataSource dataSource = new DruidDataSource();
+
+    dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
+
+    dataSource.setUrl(env.getProperty("jdbc.url"));
+
+    dataSource.setUsername(env.getProperty("jdbc.username"));
+
     dataSource.setPassword(env.getProperty("jdbc.password"));
+    dataSource.setMaxActive(Integer.parseInt(env.getProperty("jdbc.maxActive")));
     DatabasePopulatorUtils.execute(populator, dataSource);
     return dataSource;
   }

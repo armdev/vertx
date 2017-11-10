@@ -48,7 +48,7 @@ public class DeviceService extends BaseService{
 			return ResultGenerator.genFailResult("Access deny");
 		}
 		if (tb_device.getSchoolId() == null) {
-			return ResultGenerator.genFailResult("学校ID不正确");
+			return ResultGenerator.genFailResult("学校ID为空");
 		}
 		Tb_school tb_school = getSchoolKey(tb_device.getSchoolId(),tb_device.getId());
 
