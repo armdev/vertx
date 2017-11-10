@@ -35,186 +35,22 @@
 							 targetPackage="cn.didano.robot.api.dao" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		<!--生成对应表及类名 -->
-	 	<!-- <table tableName="bs_account" domainObjectName="Bs_acount"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table>
-		<table tableName="bs_catalog" domainObjectName="Bs_catalog"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table>
-		<table tableName="bs_good" domainObjectName="Bs_good"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table>
-		<table tableName="bs_trade" domainObjectName="Bs_trade"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table>
-		<table tableName="bs_order" domainObjectName="Bs_order"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table> -->
-		<!-- <table tableName="vd_channel" domainObjectName="Vd_channel"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
-			<generatedKey column="id" sqlStatement="MYSQL" identity="true"/> 
-		</table> -->
-		<!--
-	    <table tableName="vd_flow" domainObjectName="Vd_flow"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table>-->
 		
-		<!-- <table tableName="vd_live" domainObjectName="Vd_live"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table> -->
-		
-		<!-- <table tableName="vd_auth_object" domainObjectName="Vd_auth_object"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table>-->
-		<!-- <table tableName="vd_auth_switch" domainObjectName="Vd_auth_switch"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">	
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table> -->
-		<!--<table tableName="vd_auth_oss" domainObjectName="Vd_auth_oss"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">	
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table>  -->
-		<!-- <table tableName="bs_pay" domainObjectName="Bs_pay"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">	
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>   
-		</table>-->
-		<!-- <table tableName="view_student_channel" domainObjectName="View_student_channel"
-			enableCountByExample="true"  enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true">	
-		</table>
-		<table tableName="view_staff_channel" domainObjectName="View_staff_channel"
-			enableCountByExample="true"  enableSelectByExample="true"
-			selectByExampleQueryId="true">	
-		</table>   -->
-		<!-- <table tableName="vd_auth_time_control" domainObjectName="Vd_auth_time_control"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">	
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>   
-		</table> -->
-		
-		 <!-- <table tableName="tb_school" domainObjectName="Tb_school"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" >
-			<ignoreColumn column ="address" />
-			<ignoreColumn column="phone" /> 
-			<ignoreColumn column="key" /> 
-			<ignoreColumn column="key_new" /> 
-			<ignoreColumn column="key_new_time" /> 
-			<ignoreColumn column="key_active_time" /> 
-			<ignoreColumn column="created" /> 
-			<ignoreColumn column="updated" /> 
-		</table> -->
-		
-		<!-- <table tableName="tb_staff" domainObjectName="Tb_staff"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" >
-			<ignoreColumn column="rfid" /> 
-			<ignoreColumn column="qrcode_url" /> 
-			<ignoreColumn column="qrcode_school_key" /> 
-			<ignoreColumn column="sign_type_id" /> 
-			<ignoreColumn column="created" /> 
-			<ignoreColumn column="updated" /> 
-		</table>  -->
-		
-	   <!--  <table tableName="view_switch_s_c" domainObjectName="View_switch_s_c"
-			enableCountByExample="true"  enableSelectByExample="true"
-			selectByExampleQueryId="true">	
-		</table>  -->
-		<!-- <table tableName="view_channel_info" domainObjectName="View_channel_info"
-			enableCountByExample="true"  enableSelectByExample="true"
-			selectByExampleQueryId="true">	
-		</table> -->
-		<!-- <table tableName="view_channel_info_on" domainObjectName="View_channel_info_on"
-			enableCountByExample="true"  enableSelectByExample="true"
-			selectByExampleQueryId="true">	
-		</table> -->
-		
-		<!-- <table tableName="tb_sign_type" domainObjectName="tb_sign_type"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">	
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
-		</table> -->
-		<!--<table tableName="tb_benchmark" domainObjectName="Tb_benchmark"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" >
-			<ignoreColumn column="deleted" />
-		</table>-->
-		
-		<!-- <table tableName="tb_ic_card" domainObjectName="Tb_ic_card"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table> -->
-		<!-- <table tableName="tb_student" domainObjectName="Tb_student"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table> -->
-		<!-- <table tableName="tb_staff" domainObjectName="Tb_staff"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table> -->
-		
-		<!-- <table tableName="tb_student" domainObjectName="Tb_student"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table> -->
-		<!-- <table tableName="tb_student_parent" domainObjectName="Tb_studentparent"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table> -->
 		<table tableName="tb_school" domainObjectName="Tb_school"
 			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
+			 enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
 			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
+		</table>
+		<table tableName="tb_device_interaction" domainObjectName="Tb_device_interaction"
+			enableCountByExample="true" enableSelectByExample="true"
+			 enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
+			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>
 		</table>
 		<table tableName="tb_device" domainObjectName="Tb_device"
 			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
+			 enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
 			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
 		</table>
-		<!-- <table tableName="vd_websocket_log" domainObjectName="Vd_websocket_log"
-			enableCountByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="ID" sqlStatement="MYSQL" identity="true"/>  
-		</table>  -->
+		
 	</context>
 </generatorConfiguration>

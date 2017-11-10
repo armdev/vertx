@@ -9,7 +9,7 @@ import cn.didano.robot.api.vo.Tb_deviceDTO;
  * @author sheng.he@didano.cn
  *
  */
-public interface Tb_deviceMapperDefined {
+public interface Hand_Tb_deviceMapper {
 
 	/**
 	 * 根据设备编号  获取设备信息

@@ -61,6 +61,7 @@ public class BindDeviceController{
     })
     @ResponseBody
     @RequestMapping(value = "/bindParentRfid",method = RequestMethod.GET)
+    @Deprecated
     public Result bindParentRfid(@RequestHeader String deviceNo)
     {
     	return deviceService.getSchoolKey("");
@@ -73,6 +74,7 @@ public class BindDeviceController{
     })
     @ResponseBody
     @RequestMapping(value = "/bindStaffRfid",method = RequestMethod.GET)
+    @Deprecated
     public Result bindStaffRfid(@RequestHeader String deviceNo)
     {
     	return deviceService.getSchoolKey("");

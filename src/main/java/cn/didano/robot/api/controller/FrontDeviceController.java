@@ -50,6 +50,7 @@ public class FrontDeviceController{
     })
     @ResponseBody
     @RequestMapping(value = "/addStudent",method = RequestMethod.GET)
+    @Deprecated
     public Result addStudent()
     {
         return deviceService.getSchoolKey("");
@@ -64,6 +65,7 @@ public class FrontDeviceController{
     })
     @ResponseBody
     @RequestMapping(value = "/addParent",method = RequestMethod.GET)
+    @Deprecated
     public Result addParent(@RequestHeader String deviceNo)
     {
     	return deviceService.getSchoolKey("");

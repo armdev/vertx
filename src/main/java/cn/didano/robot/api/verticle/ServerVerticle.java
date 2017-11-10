@@ -12,7 +12,7 @@ import cn.didano.robot.api.messagecodec.ProductCodec;
 
 /**
  * Simple web server verticle to expose the results of the Spring service bean
- * call (routed via a verticle - see ProductVerticleConsumer)
+ * call (routed via a verticle - see CardDeviceVerticleConsumer)
  */
 public class ServerVerticle extends AbstractVerticle {
 
@@ -31,7 +31,7 @@ public class ServerVerticle extends AbstractVerticle {
 				req.response().setChunked(true);
 
 				if (req.path().equals("/products")) {
-					vertx.eventBus().<String>send(ProductVerticleConsumer.ALL_PRODUCTS_ADDRESS, "", result -> {
+					vertx.eventBus().<String>send(CardDeviceVerticleConsumer.ALL_PRODUCTS_ADDRESS, "", result -> {
 						if (result.succeeded()) {
 							req.response().setStatusCode(200).write(result.result().body()).end();
 						} else {
@@ -40,7 +40,7 @@ public class ServerVerticle extends AbstractVerticle {
 					});
 				} else if (req.path().equals("/cardDevice/getSchoolKey")) {
 					String deviceNo = req.getHeader("device_no");
-					vertx.eventBus().<String>send(ProductVerticleConsumer.GetSchoolKey, deviceNo, result -> {
+					vertx.eventBus().<String>send(CardDeviceVerticleConsumer.GetSchoolKey, deviceNo, result -> {
 						if (result.succeeded()) {
 							req.response().putHeader(HttpHeaders.CONTENT_TYPE, "application/json").setStatusCode(200).write(result.result().body()).end();
 						} else {
@@ -52,7 +52,7 @@ public class ServerVerticle extends AbstractVerticle {
 					Product p = new Product();
 					p.setDescription("serverGen");
 					p.setCreateTime(new Date());
-					vertx.eventBus().<String>send(ProductVerticleConsumer.ADD_PRODUCT, p, result -> {
+					vertx.eventBus().<String>send(CardDeviceVerticleConsumer.ADD_PRODUCT, p, result -> {
 						if (result.succeeded()) {
 							req.response().setStatusCode(200).write(result.result().body()).end();
 						} else {

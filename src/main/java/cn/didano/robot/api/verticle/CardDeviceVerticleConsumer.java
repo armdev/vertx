@@ -15,14 +15,9 @@ import cn.didano.robot.api.service.DeviceService;
 import cn.didano.robot.api.service.ProductService;
 
 /**
- * Simple verticle to wrap a Spring service bean - note we wrap the service call
- * in executeBlocking, because we know it's going to be a JDBC call which
- * blocks. As a general principle with Spring beans, the default assumption
- * should be that it will block unless you know for sure otherwise (in other
- * words use executeBlocking unless you know for sure your service call will be
- * extremely quick to respond)
+ * 刷卡终端 消费者
  */
-public class ProductVerticleConsumer extends AbstractVerticle {
+public class CardDeviceVerticleConsumer extends AbstractVerticle {
 
 	public static final String ALL_PRODUCTS_ADDRESS = "example.all.products";
 	public static final String ADD_PRODUCT = "add.product";
@@ -34,7 +29,7 @@ public class ProductVerticleConsumer extends AbstractVerticle {
 	private final ProductService service;
 	private final DeviceService deviceService;
 
-	public ProductVerticleConsumer(final ApplicationContext context) {
+	public CardDeviceVerticleConsumer(final ApplicationContext context) {
 		service = (ProductService) context.getBean("productService");
 		deviceService = (DeviceService) context.getBean("deviceService");
 	}

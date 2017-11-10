@@ -78,37 +78,6 @@ public class CardDeviceController{
     }
     
     
-    /**
-     * 
-     * @param student_id
-     * @param parent_id
-     * @param create_time
-     * @param file1
-     * @param file2
-     * @return
-     * 
-     *  array(
-      'code' => 0, //  0 - 成功
-      'message' => '', // code 不为 0 时的错误信息
-      'data' => array( // code=88时返回
-      'parent_id' => 111,
-      'time' => '2016-05-05 05:05:05', //接走时间
-      ),
-      )
-     */
-    @ApiOperation(value="提交学生已被接走信息",notes = "",response=Result.class)
-    @ApiImplicitParams({
-    	@ApiImplicitParam(name = "student_id", value = "学生ID", required = true, paramType = "body", dataType = "Int"),
-    	@ApiImplicitParam(name = "parent_id", value = "家长ID", required = true, paramType = "body", dataType = "Int"),
-    	@ApiImplicitParam(name = "create_time", value = "接走时间 格式：YYYYMMDDHHMMSS", required = true, paramType = "body", dataType = "String"),
-    	@ApiImplicitParam(name = "img", value = "图像", required = true, paramType = "body", dataType = "File"),
-    })
-    @ResponseBody
-    @RequestMapping(value = "/submitTakeAway",method = RequestMethod.GET)
-    public Result submitTakeAway(Integer student_id,Integer parent_id,String create_time, @RequestBody MultipartFile file1,@RequestBody MultipartFile file2)
-    {
-    	return deviceService.getSchoolKey("");
-    }
     @ApiOperation(value="提交学校职工签到及签退信息",notes = "",response=Result.class)
     @ApiImplicitParams({
     	@ApiImplicitParam(name = "id", value = "职工ID", required = true, paramType = "body", dataType = "Int"),
